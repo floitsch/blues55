@@ -1,0 +1,27 @@
+blues55:
+
+allows to use your Siemens S55 (and maybe similar phones) to remote
+control your pc. It has been greatly inspired by bluemote which
+only works for Sony Ericssons.
+
+Compilation:
+  usually just 'scons' should do the trick. You obviously need 'scons'
+  installed (http://www.scons.org).
+
+Usage:
+  blues55 will read every pressed key on your phone. These keys aren't
+  intercepted, and will hence be interpreted by your phone. It's
+  therefore best to go into the keylock-state of your phone. Avoid to
+  press 112 or 911 inadvertely though, as these numbers work even in
+  keylocked-state.
+
+  run ./blues55 without any parameter to see the options.
+
+Examples:
+  // bind the /dev/rfcomm0 to your cell-phone (use 'hcitool scan' to get
+  // the adress of your phone)
+  sudo rfcomm bind 0 00:11:22:33:44:55
+
+  // get into the keylock-state of your phone.
+  // then run blues55 to control the keyboard (-k):
+  ./blues55 -k
